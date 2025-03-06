@@ -1,18 +1,11 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const lastModifiedDate = new Date(document.lastModified);
-document.getElementById('lastModified').textContent =
-    `Last Updated: ${lastModifiedDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    })}`;
+document.getElementById("lastModified").textContent = "Last Updated: " + document.lastModified;
 
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('nav ul');
+const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener('click', () => {
-    const isVisible = navMenu.classList.toggle('visible');
-    hamburger.setAttribute('aria-expanded', isVisible.toString());
-    hamburger.textContent = isVisible ? '✖' : '☰';
-});
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
