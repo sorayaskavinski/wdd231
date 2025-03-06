@@ -1,27 +1,44 @@
-/* General Styles */
-body {    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+*.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+:root{
+  --primary-color: blue;
+  --secondary-color: white;
+  --terriary-color: black;
+  --text-color: white;
+  --secondary-text-color: black;
+}
+
   
-  header {
-    background-color: blue;
-    padding: 15px;
+  header { 
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px;       
+    position: relative; 
     text-align: center;
-    color: white;
-    position: relative; /* Needed for positioning the menu toggle */
   }
   
-  /* Navigation Bar */
-  nav {
-    background-color: black;
+  header span{
+    padding: 25px;
+    font-size: 25px;
+  }
+  header img{       
+    width: 80;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(10, 158, 238);
+  }
+  
+  
+  nav {    
     display: flex;
     justify-content: center;
     padding: 10px 0;
   }
   
-  /* Navigation Links */
+  
   .nav-links {
     list-style: none;
     display: flex;
@@ -34,47 +51,43 @@ body {
   }
   
   .nav-links a {
-    text-decoration: none;
-    color: white;
+    text-decoration: none;    
     padding: 10px 15px;
     display: block;
     transition: background 0.3s ease;
   }
   
-  /* Hover Effect */
+  
   .nav-links a:hover {
-    background-color: #333;
+    background-color: #ea8007;
     border-radius: 5px;
   }
   
   /* Wayfinding (Active Page Highlight) */
   .nav-links .active {
-    background-color: white;
-    color: black;
+    
     font-weight: bold;
     border-radius: 5px;
   }
   
-  /* Section Styles */
+  
   section {
-    background-color: white;
+    
     padding: 20px;
     text-align: center;
   }
   
   h2 {
-    background-color: blue;
-    color: white;
+    
     padding: 10px;
     margin: 0 auto;
-    display: inline-block; /* Prevents stretching */
+    display: inline-block; 
     border-radius: 5px;
   }
   
   /* Footer */
   footer {
-    background-color: blue;
-    color: white;
+    
     text-align: center;
     padding: 15px;
     position: relative;
