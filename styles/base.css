@@ -10,13 +10,13 @@
   --text-color: white;
   --secondary-text-color: black;
 }
-
-  
+  body{
+    padding: 5px;
+  }
   header { 
     background-color: var(--primary-color);
     color: var(--text-color);
-    padding: 15px;       
-    position: relative; 
+    padding: 25px 0 0 0;  
     text-align: center;
   }
   
@@ -24,68 +24,77 @@
     padding: 25px;
     font-size: 25px;
   }
+
   header img{       
     width: 80;
     border: 3px solid darkblue;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgb(10, 158, 238);
   }
-  
-  
+    
   nav {    
     display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    justify-content: center;  
   }
-  
-  
+    
   .nav-links {
     list-style: none;
     display: flex;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-links li {
-    margin: 0 10px;
+    width: 100%;
+    background-color: var(--terriary-color);
+    justify-content: space-evenly;       
   }
   
   .nav-links a {
+    font-size: larger;
+    color: var(--text-color);
     text-decoration: none;    
-    padding: 10px 15px;
-    display: block;
-    transition: background 0.3s ease;
+    padding: 10px 50px; 
+    margin: 10px;
   }
-  
-  
+    
   .nav-links a:hover {
     background-color: #ea8007;
     border-radius: 5px;
   }
   
-  /* Wayfinding (Active Page Highlight) */
-  .nav-links .active {
-    
+   .nav-links .active {    
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 5px;    
   }
-  
-  
-  section {
     
+  section {
     padding: 20px;
     text-align: center;
   }
-  
+
+   
   h2 {
-    
+    color: var(--primary-color);
     padding: 10px;
-    margin: 0 auto;
-    display: inline-block; 
-    border-radius: 5px;
+    margin: 0 auto;   
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 5px; 
   }
   
-  /* Footer */
+  .left, .right {
+    width: 48%; 
+    margin-top: 0px;    
+    background-color: rgba(165, 215, 240, 0.37);
+    text-align: center;
+  }
+  
+  .left{
+    margin-bottom:88px;
+  }
+  .right img{
+    width: 50%;
+  }
   footer {
     
     text-align: center;
