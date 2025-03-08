@@ -61,6 +61,10 @@ h1{
   padding: 0;
   margin-bottom: 0;
 }
+
+h1::before, h1::after{
+  content: " ✨ ";
+}
 section {
   padding: 20px;
   text-align: center;
