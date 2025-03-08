@@ -16,7 +16,6 @@ header {
   color: var(--text-color);
   padding: 25px 0;  
   text-align: center;
-  width: auto;
 }
   
 header span{
@@ -122,49 +121,29 @@ h2 {
   
 }
 
-.nav-general ul, .nav-specific ul {
+.nav-filter ul, .nav-specific ul {
   list-style: none;
   display: flex;
   width: 100%;
-  background-color: var(--tertiary-color);
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
   margin-bottom: 20px;      
 }
 
-.nav-general ul{
-  margin-bottom: 30px;
-}
-
-.nav-general li a{
-  font-size: large;    
-  text-decoration: none;
-  font-weight: 800;
-  padding: 10px 20px; 
-  margin: 10px;
+#all, #cse, #wdd{
   background-color: var(--primary-color);
-  border-radius: 8px;
   color: var(--text-color);
-}
-
-.nav-specific li a{
-  font-size: large;
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 800;
-  padding: 10px 20px; 
-  margin: 10px;
-  background-color: rgba(75, 31, 1, 0.988);
-  border-radius: 8px;
-}
-.nav-general li a:hover, .nav-specific li a:hover {
-  background-color: #ea8007;
+  padding: 10px;
   border-radius: 5px;
+  font-weight: 600;
+  font-size: larger;
 }
 
-.nav-general li .active, .nav-specific li .active{    
-  font-weight: bold;
-  border-radius: 5px;    
-}  
+#cse110, #wdd130, #cse111, #cse210, #wdd131, #wdd231{
+  background-color: rgb(94, 5, 5);
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 5px;
+}
 
 footer {
   background-color: var(--primary-color);
@@ -234,13 +213,16 @@ footer {
     width: 80%;
   }
 
-  .nav-specific li a{
-    width: 90%;
-    text-align: left;      
-    padding: 3px;     
-    margin: 0; 
-    font-weight: 100;
-    font-size: smaller;
+  .nav-filter, .nav-specific{
+    justify-content: space-evenly;
+  }
+
+  .nav-filter{
+    margin-right: 40px; 
+  }
+
+  .nav-specific{
+    margin-right: 50px;    
   }
 
   .certificates h2{

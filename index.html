@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>WDD 231 - Web Frontend Development I - Soraya Skavinski</title>
-        <meta name="Description" content="Explore my WDD 231 coursework, including my Chamber project, GitHub and LinkedIn profile, and certificates earned along the way.">
+        <meta name="description" content="Explore my WDD 231 coursework, including my Chamber project, GitHub and LinkedIn profile, and certificates earned along the way.">
         <meta name="author" content="Soraya Skavinski">  
+        <title>WDD 231 - Web Frontend Development I - Soraya Skavinski</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -27,6 +27,7 @@
                 </ul>                                               
             </nav>
         </header>
+
         <main>
             <h1>Home</h1>
             <div class="container">
@@ -55,23 +56,31 @@
 
             <section class="certificates">
                 <h2>Web and Computer Programing Certificate</h2>
-                <nav class="nav-general">
+                <nav class="nav-filter">
                     <ul>
-                        <li><a href="">All</a></li>
-                        <li><a href="">CSE</a></li>
-                        <li><a href="">WDD</a></li>
+                        <li><button id="all">ALL</button></li>
+                        <li><button id="cse">CSE</button></li>
+                        <li><button id="wdd">WDD</a></li>
                     </ul>
                 </nav>
                 <nav class="nav-specific">
                     <ul>
-                        <li><a href="">CSE 110</a></li>
-                        <li><a href="">WDD 130</a></li>
-                        <li><a href="">CSE 111</a></li>
-                        <li><a href="">CSE 210</a></li>
-                        <li><a href="">WDD 131</a></li>
-                        <li><a href="">WDD 231</a></li>
+                        <li><button id="cse110">CSE 110</button></li>
+                        <li><button id="wdd130">WDD 130</button></li>
+                        <li><button id="cse111">CSE 111</button></li>
+                        <li><button id="cse210">CSE 210</button></li>
+                        <li><button id="wdd131">WDD 131</button></li>
+                        <li><button id="wdd231">WDD 231</button></li>
                     </ul>                    
                 </nav>
+                <div class="course-list">
+                    <ul class="course-container">
+
+                    </ul>
+                </div>
+                <div id="totalCredits">
+                    <p>Total Credits: <span id="credits">0</span></p>
+                </div>
             </section>
         </main>
 
