@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelector(".nav-links");
 
   menuToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
   });
 
-  
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
 });
