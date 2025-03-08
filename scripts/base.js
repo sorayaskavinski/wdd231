@@ -54,7 +54,7 @@ document.getElementById('wdd').addEventListener('click', function () {
   displayCourses(wddCourses);
 });
 
-document.getElementById('cses').addEventListener('click', function () {
+document.getElementById('cse').addEventListener('click', function () {
   const cseCourses = courses.filter(course => course.category === "CSE");
   displayCourses(cseCourses);
 });
