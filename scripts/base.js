@@ -1,9 +1,12 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-        document.getElementById("lastModified").textContent = "Last Updated: " + document.lastModified;
-        
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+  });
+
+  
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
+});
