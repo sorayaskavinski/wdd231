@@ -10,253 +10,247 @@
   --text-color: white;
   --secondary-text-color: black;
 }
-  body{
+
+body{
     padding: 5px;
+}
+
+header { 
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 25px 0 0 0;  
+  text-align: center;
+  width: auto;
+}
+  
+header span{
+  padding: 40px;
+  font-size: 25px;  
+}
+
+header img{       
+  width: 80px;
+  border: 3px solid darkblue;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(10, 158, 238);
+}
+  
+nav {    
+  display: flex;
+  justify-content: center; 
+}
+  
+.nav-links {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  background-color: var(--secondary-color);
+  justify-content: space-evenly;
+  padding: 10px;       
+}
+
+.nav-links li a {
+  font-size: larger;
+  color: var(--text-color);
+  text-decoration: none;    
+  padding: 10px 50px; 
+  margin: 10px;
+}
+  
+.nav-links li a:hover {
+  background-color: #ea8007;
+  border-radius: 5px;
+}
+
+.nav-links .active {    
+  font-weight: bold;
+  border-radius: 5px;    
+}
+
+h1{
+  padding: 0;
+  margin-bottom: 0;
+}
+section {
+  padding: 20px;
+  text-align: center;
+}
+  
+h2 {
+  color: var(--text-color);
+  padding: 10px;
+  margin: 0 auto;   
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 5px;     
+}
+
+.left, .right {
+  width: 48%;    
+  background-color:var(--primary-color);
+  text-align: center;
+  border-radius: 5px;   
+}  
+
+.left{    
+  padding-bottom: 13%;
+}
+
+.left li{
+  color: var(--text-color);
+}
+
+.right img{
+  width: 65%;
+  padding: 0;
+  border-radius: 5px;
+  border-color: 3px solid black;
+}
+
+.right figcaption{
+  color: var(--text-color);
+}
+
+.certificates{
+  background-color: lightblue;
+  padding: 5px;    
+  border-radius: 10px;
+  width: 90%;
+  justify-self: center;    
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.certificates h2{
+  color: var(--secondary-color);
+  font-size: 25px;
+  
+}
+
+.nav-general ul, .nav-specific ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  background-color: var(--tertiary-color);
+  justify-content: space-evenly;       
+}
+
+.nav-general li a{
+  font-size: large;    
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 20px; 
+  margin: 10px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: var(--text-color);
+}
+
+.nav-specific li a{
+  font-size: large;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 20px; 
+  margin: 10px;
+  background-color: rgba(75, 31, 1, 0.988);
+  border-radius: 8px;
+}
+.nav-general li a:hover, .nav-specific li a:hover {
+  background-color: #ea8007;
+  border-radius: 5px;
+}
+
+.nav-general li .active, .nav-specific li .active{    
+  font-weight: bold;
+  border-radius: 5px;    
+}  
+
+footer {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: var(--text-color);
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
-  header { 
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 25px 0 0 0;  
-    text-align: center;
-    width: auto;
-  }
-  
-  header span{
-    padding: 25px;
-    font-size: 25px;
+  .nav-links .active {
+    display: flex;
   }
 
-  header img{       
-    width: 80;
-    border: 3px solid darkblue;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgb(10, 158, 238);
-  }
-    
-  nav {    
-    display: flex;
-    justify-content: center;  
-  }
-    
-  .nav-links {
-    list-style: none;
-    display: flex;
-    width: 95%;
-    background-color: var(--secondary-color);
-    justify-content: space-evenly;       
-  }
-  
-  .nav-links a {
-    font-size: larger;
-    color: var(--text-color);
-    text-decoration: none;    
-    padding: 10px 50px; 
-    margin: 10px;
-  }
-    
-  .nav-links a:hover {
-    background-color: #ea8007;
-    border-radius: 5px;
-  }
-  
-  .nav-links .active {    
-    font-weight: bold;
-    border-radius: 5px;    
-  }
-  
-  h1{
-    padding: 0;
-    margin-bottom: 0;
-  }
-  section {
-    padding: 20px;
+  .nav-links li {
+    margin: 0;
+    width: 100%;
     text-align: center;
-  }
-   
-  h2 {
-    color: var(--text-color);
-    padding: 10px;
-    margin: 0 auto;   
   }
 
-  .container {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    gap: 5px;     
-  }
-  
-  .left, .right {
-    width: 48%;    
-    background-color:var(--primary-color);
-    text-align: center;
-    border-radius: 5px;   
+  .nav-links li a {
+    display: block;
+    padding: 15px;
+    border-top: 1px solid white;
   }  
-  
-  .left{    
-    padding-bottom: 13%;
+
+  .menu-toggle {
+    display: block;
+  } 
+
+  .container{
+    flex-direction: column;
+    align-items: center;
   }
 
-  .left li{
-    color: var(--text-color);
+  .left, .right{
+    width: 100%;
+  }
+
+  .left{
+    padding-bottom: 5%;
   }
 
   .right img{
-    width: 65%;
-    padding: 0;
-    border-radius: 5px;
-    border-color: 3px solid black;
+    width: 80%;
   }
 
-  .right figcaption{
-    color: var(--text-color);
-  }
-
-  .certificates{
-    background-color: lightblue;
-    padding: 5px;    
-    border-radius: 10px;
+  .nav-specific li a{
     width: 90%;
-    justify-self: center;    
-    margin-top: 10px;
-    margin-bottom: 10px;
+    text-align: left;      
+    padding: 3px;     
+    margin: 0; 
+    font-weight: 100;
+    font-size: smaller;
   }
-  
+
   .certificates h2{
-    color: var(--secondary-color);
-    font-size: 25px;
-    
+    font-size: 20px;
   }
-  .nav-general, .nav-specific {
-    list-style: none;
-    display: flex;
-    width: 100%;
-    background-color: var(--tertiary-color);
-    justify-content: space-evenly;       
-  }
-  
-  .nav-general a{
-    font-size: large;    
-    text-decoration: none;
-    font-weight: 800;
-    padding: 10px 20px; 
-    margin: 10px;
-    background-color: var(--primary-color);
-    border-radius: 8px;
-    color: var(--text-color);
-  }
-  
-  .nav-specific a{
-    font-size: large;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 800;
-    padding: 10px 20px; 
-    margin: 10px;
-    background-color: rgba(75, 31, 1, 0.988);
-    border-radius: 8px;
-  }
-  .nav-general a:hover, .nav-specific a:hover {
-    background-color: #ea8007;
-    border-radius: 5px;
-  }
-  
-  .nav-general .active. .nav-specific .active{    
-    font-weight: bold;
-    border-radius: 5px;    
-  }  
-
-  footer {
-    background-color: var(--primary-color);
-    text-align: center;
-    padding: 15px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    color: var(--text-color);
-  }
-  
-  /* Hamburger Menu Button */
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-  }
-  
-  /* Responsive Styles */
-  @media screen and (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-    }
-  
-    .nav-links li {
-      margin: 0;
-    }
-  
-    .nav-links a {
-      padding: 15px;
-      border-top: 1px solid white;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-
-    .container{
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .left, .right{
-      width: 100%;
-    }
-
-    .left{
-      padding-bottom: 5%;
-    }
-
-    .right im{
-      width: 80%;
-    }
-
-    .nav-specific{
-      flex-direction: column;
-      align-items: center;
-      width: 100%;      
-    }
-
-    .nav-specific a{
-      width: 90%;
-      text-align: center;      
-      padding: 0;     
-      margin: 20px;
-      padding: 0;
-      justify-content: space-evenly;
-      font-weight: 200;
-    }
-
-    .certificates h2{
-      font-size: 20px;
-    }
-  }
-  
+}
