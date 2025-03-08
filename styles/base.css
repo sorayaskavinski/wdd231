@@ -5,19 +5,21 @@
 }
 :root{
   --primary-color: blue;
-  --secondary-color: white;
-  --terriary-color: black;
+  --secondary-color: black;
+  --tertiary--color: lightblue;  
   --text-color: white;
   --secondary-text-color: black;
 }
   body{
     padding: 5px;
   }
+
   header { 
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 25px 0 0 0;  
     text-align: center;
+    width: auto;
   }
   
   header span{
@@ -40,8 +42,8 @@
   .nav-links {
     list-style: none;
     display: flex;
-    width: 100%;
-    background-color: var(--terriary-color);
+    width: 95%;
+    background-color: var(--secondary-color);
     justify-content: space-evenly;       
   }
   
@@ -58,19 +60,22 @@
     border-radius: 5px;
   }
   
-   .nav-links .active {    
+  .nav-links .active {    
     font-weight: bold;
     border-radius: 5px;    
   }
-    
+  
+  h1{
+    padding: 0;
+    margin-bottom: 0;
+  }
   section {
     padding: 20px;
     text-align: center;
   }
-
    
   h2 {
-    color: var(--primary-color);
+    color: var(--text-color);
     padding: 10px;
     margin: 0 auto;   
   }
@@ -79,29 +84,97 @@
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    gap: 5px; 
+    gap: 5px;     
   }
   
   .left, .right {
-    width: 48%; 
-    margin-top: 0px;    
-    background-color: rgba(165, 215, 240, 0.37);
+    width: 48%;    
+    background-color:var(--primary-color);
     text-align: center;
+    border-radius: 5px;   
+  }  
+  
+  .left{    
+    padding-bottom: 13%;
+  }
+
+  .left li{
+    color: var(--text-color);
+  }
+
+  .right img{
+    width: 65%;
+    padding: 0;
+    border-radius: 5px;
+    border-color: 3px solid black;
+  }
+
+  .right figcaption{
+    color: var(--text-color);
+  }
+
+  .certificates{
+    background-color: lightblue;
+    padding: 5px;    
+    border-radius: 10px;
+    width: 90%;
+    justify-self: center;    
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
-  .left{
-    margin-bottom:88px;
-  }
-  .right img{
-    width: 50%;
-  }
-  footer {
+  .certificates h2{
+    color: var(--secondary-color);
+    font-size: 25px;
     
+  }
+  .nav-general, .nav-specific {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    background-color: var(--tertiary-color);
+    justify-content: space-evenly;       
+  }
+  
+  .nav-general a{
+    font-size: large;    
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 20px; 
+    margin: 10px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    color: var(--text-color);
+  }
+  
+  .nav-specific a{
+    font-size: large;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 20px; 
+    margin: 10px;
+    background-color: rgba(75, 31, 1, 0.988);
+    border-radius: 8px;
+  }
+  .nav-general a:hover, .nav-specific a:hover {
+    background-color: #ea8007;
+    border-radius: 5px;
+  }
+  
+  .nav-general .active. .nav-specific .active{    
+    font-weight: bold;
+    border-radius: 5px;    
+  }  
+
+  footer {
+    background-color: var(--primary-color);
     text-align: center;
     padding: 15px;
     position: relative;
     bottom: 0;
     width: 100%;
+    color: var(--text-color);
   }
   
   /* Hamburger Menu Button */
@@ -147,6 +220,43 @@
   
     .nav-links.active {
       display: flex;
+    }
+
+    .container{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left, .right{
+      width: 100%;
+    }
+
+    .left{
+      padding-bottom: 5%;
+    }
+
+    .right im{
+      width: 80%;
+    }
+
+    .nav-specific{
+      flex-direction: column;
+      align-items: center;
+      width: 100%;      
+    }
+
+    .nav-specific a{
+      width: 90%;
+      text-align: center;      
+      padding: 0;     
+      margin: 20px;
+      padding: 0;
+      justify-content: space-evenly;
+      font-weight: 200;
+    }
+
+    .certificates h2{
+      font-size: 20px;
     }
   }
   
