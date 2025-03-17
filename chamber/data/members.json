@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Skavinski Steel",
+      "address": "123 Steel Frame St, São Paulo, Brazil",
+      "phone": "+55 11 98765-4321",
+      "website": "https://skavinskisteel.com",
+      "image": "skavinski_steel.png",
+      "membership": 3,
+      "description": "Experts in steel frame construction with modern and efficient solutions."
+    },
+    {
+      "name": "Tech Innovators",
+      "address": "456 Innovation Rd, Rio de Janeiro, Brazil",
+      "phone": "+55 21 99876-5432",
+      "website": "https://techinnovators.com",
+      "image": "tech_innovators.png",
+      "membership": 2,
+      "description": "Pioneers in AI and software development solutions."
+    },
+    {
+      "name": "EcoBuild Solutions",
+      "address": "789 Greenway Ave, Curitiba, Brazil",
+      "phone": "+55 41 91234-5678",
+      "website": "https://ecobuild.com",
+      "image": "ecobuild_solutions.png",
+      "membership": 3,
+      "description": "Sustainable construction with an eco-friendly approach."
+    },
+    {
+      "name": "Fast Logistics",
+      "address": "101 Express Lane, Fortaleza, Brazil",
+      "phone": "+55 85 96543-2109",
+      "website": "https://fastlogistics.com",
+      "image": "fast_logistics.png",
+      "membership": 1,
+      "description": "Reliable and quick logistics services for businesses."
+    },
+    {
+      "name": "Digital Nexus",
+      "address": "202 Cyber Blvd, Belo Horizonte, Brazil",
+      "phone": "+55 31 98765-4321",
+      "website": "https://digitalnexus.com",
+      "image": "digital_nexus.png",
+      "membership": 2,
+      "description": "Your go-to company for digital marketing and SEO solutions."
+    },
+    {
+      "name": "SolarTech Energy",
+      "address": "303 Solar Park, Recife, Brazil",
+      "phone": "+55 81 91234-5678",
+      "website": "https://solartech.com",
+      "image": "solartech_energy.png",
+      "membership": 3,
+      "description": "Innovative solar energy solutions for businesses and homes."
+    },
+    {
+      "name": "Urban Creators",
+      "address": "404 Art District, Brasília, Brazil",
+      "phone": "+55 61 99876-5432",
+      "website": "https://urbancreators.com",
+      "image": "urban_creators.png",
+      "membership": 1,
+      "description": "Creative solutions for urban design and architecture."
+    }
+  ]
+  

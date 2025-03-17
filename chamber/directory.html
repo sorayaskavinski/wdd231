@@ -1,42 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <title>WDD 231 - Chamber Site - Soraya Skavinski</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Chamber site homepage containing forecast and main business from São Paulo">
     <meta name="author" content="Soraya Skavinski">  
-    <meta property="og:title" content="directory page">
+    <meta property="og:title" content="Chamber Site - Directory Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://sorayaskavinski.github.io/wdd231/images/mapa.webp">
-    <meta property="og:url" content="https://sorayaskavinski.github.io/wdd231/chamber/directory.html">
-    
-    <!-- Preconnect and Google Fonts -->
+    <meta property="og:url" content="https://sorayaskavinski.github.io/wdd231/chamber/directory.html">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="styles/directory.css">
-
-    <!-- JavaScript Files -->
-    <script src="scripts/directory.js" defer></script> 
-    <script src="scripts/weather.js" defer></script>  
-
+    <link rel="stylesheet" href="styles/base.css">    
+    <script src="scripts/base.js" defer></script>     
     <link rel="icon" href="favicon.ico">  
 </head>
 <body>
-    <header>
-        <img src="images/logo.webp" alt="logo">
-        <img src="images/emblema.webp" alt="emblema">
-        <p>Chamber of Commerce</p>
-        <button id="menu">☰</button>
-        <nav id="main">
-            <ul class="links">
-                <li class="active"><a href="index.html" title="home">Home</a></li>
-                <li><a href="directory.html" title="directory-page">Directory</a></li>
-                <li><a href="join.html" title="join" target="_blank">Join</a></li>
-                <li><a href="discover.html" target="_blank" title="discover-page">Discover</a></li>
+    <header>        
+        <img src="images/emblema.webp" alt="Chamber emblem">
+        <p>São Paulo Chamber of Commerce</p>
+        <button class="menu-toggle">☰</button>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li class="active"><a href="index.html" title="Home" target="_blank">Home</a></li>
+                <li><a href="directory.html" title="Directory" target="_blank">Directory</a></li>
+                <li><a href="join.html" title="Join" target="_blank">Join</a></li>
+                <li><a href="discover.html" target="_blank" title="Discover">Discover</a></li>
             </ul>
         </nav>
     </header>
@@ -53,18 +44,63 @@
             <div id="events">
                 <h3>Events</h3>
                 <ul>
-                    <li>xx</li>
-                    <li>xx</li>
-                    <li>ss</li>
+                    <li>Exhibition "Between Ayê e Orun" at Caixa Cultural.</li>
+                    <li>Show "Réquiem SP" at Downtown Theater.</li>
+                    <li>Project "CENTRÔ!" with live art and music throughout the streets and squares of downtown.</li>
                 </ul>
             </div>
 
-            <div id="weather">
+            <div id="current-weather">
                 <h3>Current Weather</h3>
-                
+                <img id="weather-icon" alt="Weather icon">
+                <div id="info-text">
+                    <p><span id="current-temp"></span></p>
+                    <p id="description"></p>
+                    <p id="high-temp"></p>
+                    <p id="low-temp"></p>
+                    <p id="humidity"></p>
+                    <p id="sunrise"></p>
+                    <p id="sunset"></p>
+                </div>
+            </div>
+            <div id="weather-forecast">
+                <h3>Weather Forecast</h3>
+                <p id="today"></p>
+                <p id="next-day"></p>
+                <p id="next-day2"></p>
             </div>
         </section>
+        <div id="spotlights" class="grid"></div>
     </main>
-
+    
+    <footer>
+        <div id="first-footer-info">
+            <p>São Paulo Chamber of Commerce</p>
+            <p>Rua 25 de Março, 210, Downtown</p>
+            <p>São Paulo, São Paulo, Brazil</p>
+            <p>info@sp.gov.br</p>
+            <p>+55 (11) 9876-54321</p>
+        </div>
+        <nav id="footer-social">
+            <a href="https://www.youtube.com/" target="_blank">
+                <img src="images/youtube-logo.webp" alt="YouTube logo">
+            </a>
+            <a href="https://x.com/home" target="_blank">
+                <img src="images/x-logo.webp" alt="X (Twitter) logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook-logo.webp" alt="Facebook logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin-logo.webp" alt="LinkedIn logo">
+            </a>
+        </nav>
+        <div id="second-footer-info">
+            <p>WDD231 Class Project</p>
+            <p>Soraya Skavinski</p>
+            <p>&copy; <span id="year"></span> São Paulo Chamber of Commerce</p>
+            <p><span id="lastModified"></span></p>
+        </div>
+    </footer>
 </body>
 </html>
