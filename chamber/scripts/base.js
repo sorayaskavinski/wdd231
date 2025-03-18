@@ -95,6 +95,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         fetchMembers();
     });
 
+    document.getElementById('members-container').classList.remove('hidden');
+
+
     fetchMembers();
 });
 
