@@ -76,24 +76,46 @@ document.addEventListener("DOMContentLoaded", function () {
   });
  
 
-//Display chamber members
-document.addEventListener("DOMContentLoaded", async () => {
-    const membersContainer = document.getElementById("members-container");
-    const toggleButton = document.getElementById("menu-list");
-    let isGridView = true;   
+  document.addEventListener("DOMContentLoaded", async () => {
+    const membersContainer = document.getElementById("cards");
+    const featuredContainer = document.getElementById("featured-members");
+    const gridButton = document.getElementById("menu-grid");
+    const listButton = document.getElementById("menu-list");    
+    let isGridView = true; 
 
+    if (gridButton && listButton) {
+        gridButton.addEventListener("click", () => {
+            isGridView = true;
+            fetchMembers();
+        });
+
+        listButton.addEventListener("click", () => {
+            isGridView = false;
+            fetchMembers();
+        });
+    }
 
     async function fetchMembers() {
         try {
-            const response = await fetch("chamber/data/members.json");
+            const response = await fetch("./data/members.json");
             if (!response.ok) throw new Error("Failed to fetch members");
             const members = await response.json();
-            displayMembers(members);
+
+            if (membersContainer) {
+                displayMembers(members);
+            }
+
+            if (featuredContainer) {
+                displayFeaturedMembers(members);
+            }
+
         } catch (error) {
             console.error(error);
-            document.getElementById("members-container").innerHTML = "<p>Error loading members.</p>";
+            if (membersContainer) {
+                membersContainer.innerHTML = "<p>Error loading members.</p>";
+            }
         }
-    }    
+    }
 
     function displayMembers(members) {
         membersContainer.innerHTML = "";
@@ -102,7 +124,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         members.forEach(member => {
             const memberCard = document.createElement("div");
             memberCard.classList.add("member-card");
-            
+
             memberCard.innerHTML = `
                 <img src="images/${member.image}" alt="${member.name}">
                 <h3>${member.name}</h3>
@@ -112,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p><strong>Website:</strong> <a href="${member.website}" target="_blank">Visit</a></p>
                 <p><strong>Membership Level:</strong> ${getMembershipLevel(member.membership)}</p>
             `;
-            
+
             membersContainer.appendChild(memberCard);
         });
     }
@@ -126,14 +148,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    toggleButton.addEventListener("click", () => {
-        isGridView = !isGridView;
-        fetchMembers();
-    });
+    if (membersContainer) {
+        membersContainer.classList.remove("hidden");
+    }
 
-    document.getElementById('members-container').classList.remove('hidden');
+    function displayFeaturedMembers(members) {
+        featuredContainer.innerHTML = "";        
+        
+        // Create a shuffled copy to avoid modifying the original members array
+        const shuffled = [...members].sort(() => 0.5 - Math.random()).slice(0, 3);
 
+        shuffled.forEach(member => {
+            const memberCard = document.createElement("div");
+            memberCard.classList.add("member-card");
 
+            memberCard.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name}">
+                <h3>${member.name}</h3>
+                <p>${member.description}</p>
+                <p><strong>Phone:</strong> ${member.phone}</p>
+                <p><strong>Website:</strong> <a href="${member.website}" target="_blank">Visit</a></p>
+            `;
+
+            featuredContainer.appendChild(memberCard);
+        });
+    }
+    
     fetchMembers();
 });
-
