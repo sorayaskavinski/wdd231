@@ -144,8 +144,7 @@ h2::before, h2::after {
 
 h3{
     background-color: var(--secondary-color);
-    color: var(--text-color);
-    font-style: bold;
+    color: var(--text-color);    
     border-radius: 5px;
     padding: 10px;
     font-size: 20px;  
