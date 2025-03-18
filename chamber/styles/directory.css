@@ -84,110 +84,59 @@ h1 {
     padding: 10px;
 }
 
-.hero {
-    position: relative;      
-    background-image: url('/chamber/images/mapa.webp');
-    background-size: cover;
-    background-position: center;
+/* Styling for the menu buttons */
+#menu-buttons {
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-.hero img{
-    width: 100%;
-    height: 50%;
-}
-
-.hero a {
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+#menu-buttons button {
+    background-color: #0073e6;
+    color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 20px;
     font-size: 16px;
-    text-decoration: none;
-    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
 }
 
-h2{
-    text-align: center;
-    padding: 5px;
-    text-shadow: -3px 0px 2px white;
-    font-size: 35px;
+#menu-buttons button:hover {
+    background-color: #005bb5;
 }
 
-h2::before, h2::after {
-    content: ' ⨳ ';
-}
-
-.home{
-    display: flex;
-    justify-content: space-between;
+/* Styling for the grid and list views */
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
 
-.home > div{
-    flex:1;
-    background-color: var(--text-color);
-    padding: 20px;
-    text-align: center;
+.grid .member-card {
+    background: #f9f9f9;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h3{
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    font-style: bold;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 20px;  
-}
-
-#events li{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: justify;
-    font-size: 18px;   
-}
-
-#weather-icon{ 
-    width: 80px;
-    height: auto;
-    position: relative;
+.list .member-card {
     display: flex;
-    border: 2px solid var(--secondary-color);
-    margin-top: 40px;
-    border-radius: 5px;    
-}
-
-#current-weather div{
-    position: absolute;    
-    font-size: 18px;
-    transform: translate(48%, -60%);
-    text-align: center;
-}
-
-#weather-forecast p{
-    font-size: 18px;   
-    margin-top: 30px;
-}
-
-.grid > div{
-    flex:1;
-    background-color: var(--text-color);
-    padding: 20px;
-    text-align: center;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+.list .member-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 footer {
@@ -215,15 +164,81 @@ footer {
 }
 
 #footer-social a img {
-    width: 30px; /* Adjust size as needed */
+    width: 30px; 
     height: auto;
 }
 
+#cards{
+    background-color: var(--text-color);
+    color: var(--text-second-color);
+}
 
+@keyframes blue-background-color {
+    0% {
+        background-color: rgb(0, 58, 124);
+    }
+
+    50% {
+        background-color: rgb(33, 96, 168);
+    }
+
+    100% {
+        background-color: #6BA8E8;
+    }
+}
+
+.member-card h3 {
+    margin: 0 auto;
+    background-color: transparent;
+    animation: black-color 3s ease-in-out forwards;
+}
+
+@keyframes black-color {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+
+    60% {
+        color: rgb(133, 133, 133);
+    }
+
+    100% {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.member-card button {
+    justify-self: center;
+    padding: 2px;
+}
+
+#membership-box {
+    margin: auto auto;
+    padding: 1rem;
+    background-color: #C5DDF6;
+    border: dashed 1px black;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#membership-box h2 {
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+#membership-box button {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    padding: 4px 2px 2px 2px;
+    justify-content: center;
+}
 
 
 /*Responsive Styles*/
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .menu-toggle {
         display: block; 
         background-color: var(--secondary-color);
@@ -249,19 +264,18 @@ footer {
     .nav-links li {
         margin: 10px 0;
     }
-
-    .home{
+    
+    #menu-buttons {
         flex-direction: column;
         align-items: center;
     }
-
-    #current-weather{
-        width: 100%;
-        padding-bottom: 85px;
+    
+    #menu-buttons button {
+        width: 80%;
     }
 
-    #weather-forecast{
-        padding: 5px;
-        width: 100%;
+    #cards {
+        grid-template-columns: 1fr;
     }
 }
+

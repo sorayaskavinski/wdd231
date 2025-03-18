@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WDD 231 - São Paulo Chamber of Commerce </title>
+    <title>WDD 231 - Business Directory page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber site homepage containing forecast and main business from São Paulo">
+    <meta name="description" content="Business Directory page, containing business name, address, phone, website url, image file name, and membership level">
     <meta name="author" content="Soraya Skavinski">  
-    <meta property="og:title" content="Chamber Site - Index Page">
+    <meta property="og:title" content="Chamber Site - Directory Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://sorayaskavinski.github.io/wdd231/images/mapa.webp">
     <meta property="og:url" content="https://sorayaskavinski.github.io/wdd231/chamber/directory.html">  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/base.css">    
+    <link rel="stylesheet" href="styles/directory.css">    
     <script src="scripts/base.js" defer></script>     
     <link rel="icon" href="favicon.ico">  
 </head>
 <body>
-    <header>        
+    <header>              
         <img src="images/emblema.webp" alt="Chamber emblem">
         <h1>São Paulo Chamber of Commerce</h1>
         <button class="menu-toggle">☰</button>
@@ -29,50 +29,17 @@
                 <li><a href="join.html" title="Join" target="_blank">Join</a></li>
                 <li><a href="discover.html" target="_blank" title="Discover">Discover</a></li>
             </ul>
-        </nav>
+        </nav>          
     </header>
-
-    <main>
-        <div class="hero">
-            <img src="images/mapa.webp" alt="São Paulo tourism map">
-            <a href="join.html" id="tickets">Join São Paulo Community</a>
+    <main>        
+        <div id="menu-buttons">
+            <button id="menu-grid">Grid</button>
+            <button id="menu-list">List</button>
         </div>
-        
-        <h2>Home</h2> 
+        <section id="cards" class="grid">
 
-        <section class="home">
-            <div id="events">
-                <h3>Events</h3>
-                <ul>
-                    <li>Exhibition "Between Ayê e Orun" at Caixa Cultural.</li>
-                    <li>Show "Réquiem SP" at Downtown Theater.</li>
-                    <li>Project "CENTRÔ!" with live art and music throughout the streets and squares of downtown.</li>
-                </ul>
-            </div>
-
-            <div id="current-weather">
-                <h3>Current Weather</h3>
-                <img id="weather-icon" src="images/weather-icon.png" alt="Weather icon">
-                <div>
-                    <p><span id="current-temp"></span></p>
-                    <p id="description"></p>
-                    <p id="high-temp"></p>
-                    <p id="low-temp"></p>
-                    <p id="humidity"></p>
-                    <p id="sunrise"></p>
-                    <p id="sunset"></p>
-                </div>
-            </div>
-            <div id="weather-forecast">
-                <h3>Weather Forecast</h3>
-                <p id="today"></p>
-                <p id="next-day"></p>
-                <p id="next-day2"></p>
-            </div>
         </section>
-        <div id="spotlights" class="grid"></div>
-    </main>
-    
+    </main>   
     <footer>
         <div id="first-footer-info">
             <p>São Paulo Chamber of Commerce</p>

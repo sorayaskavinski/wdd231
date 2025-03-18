@@ -13,43 +13,79 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
   });  
 
-// Weather API integration
-const apiKey = "815123c426417cedb6f39238699089a1";
-const city = "São Paulo";
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
-async function getWeather() {
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error("Weather data not available");
-
-        const data = await response.json();
-        document.getElementById("current-temp").textContent = `Temperature: ${data.main.temp}°C`;
-        document.getElementById("description").textContent = `Condition: ${data.weather[0].description}`;
-        document.getElementById("high-temp").textContent = `High: ${data.main.temp_max}°C`;
-        document.getElementById("low-temp").textContent = `Low: ${data.main.temp_min}°C`;
-        document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
-
-        const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-        document.getElementById("weather-icon").src = iconUrl;
-        document.getElementById("weather-icon").alt = data.weather[0].description;
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-// Load weather when the page loads
-window.addEventListener("load", getWeather);
+  const apiKey = "815123c426417cedb6f39238699089a1";
+  const city = "São Paulo";
+  
+  // API URLs
+  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+  
+  async function getWeather() {
+      try {
+          const response = await fetch(currentWeatherUrl);
+          if (!response.ok) throw new Error("Weather data not available");
+  
+          const data = await response.json();  
+          
+          document.getElementById("current-temp").innerHTML = `<strong>Temperature:</strong> ${data.main.temp}°C`;
+          document.getElementById("description").innerHTML = `<strong>Condition: </strong> ${data.weather[0].description}`;
+          document.getElementById("high-temp").innerHTML = `<strong>High: </strong> ${data.main.temp_max}°C`;
+          document.getElementById("low-temp").innerHTML = `<strong>Low:</stong> ${data.main.temp_min}°C`;
+          document.getElementById("humidity").innerHTML = `<strong>Humidity: </strong> ${data.main.humidity}%`;  
+        
+          const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+          document.getElementById("weather-icon").src = iconUrl;
+          document.getElementById("weather-icon").alt = data.weather[0].description;  
+          
+          const sunriseTime = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+          const sunsetTime = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+  
+          document.getElementById("sunrise").innerHTML = `<strong>Sunrise:</strong> ${sunriseTime}`;
+          document.getElementById("sunset").innerHTML = `<strong>Sunset:</strong> ${sunsetTime}`;
+      } catch (error) {
+          console.error(error);
+      }
+  }
+  
+  async function getWeatherForecast() {
+      try {
+          const response = await fetch(forecastUrl);
+          if (!response.ok) throw new Error("Forecast data not available");
+  
+          const data = await response.json();
+  
+         
+          const dailyForecasts = data.list.filter(entry => entry.dt_txt.includes("12:00:00"));
+  
+          // Forecast days 
+          if (dailyForecasts.length >= 3) {
+              document.getElementById("today").innerHTML = `<strong>Today: </strong> ${dailyForecasts[0].main.temp}°C - ${dailyForecasts[0].weather[0].description}`;
+              document.getElementById("next-day").innerHTML = `<strong>Tomorrow:</strong> ${dailyForecasts[1].main.temp}°C - ${dailyForecasts[1].weather[0].description}`;
+              document.getElementById("next-day2").innerHTML = `<strong>Day After Tomorrow: </strong> ${dailyForecasts[2].main.temp}°C - ${dailyForecasts[2].weather[0].description}`;
+          } else {
+              console.warn("Not enough forecast data available.");
+          }
+      } catch (error) {
+          console.error(error);
+      }
+  }  
+ 
+  window.addEventListener("load", () => {
+      getWeather();
+      getWeatherForecast();
+  });
+ 
 
 //Display chamber members
 document.addEventListener("DOMContentLoaded", async () => {
     const membersContainer = document.getElementById("members-container");
-    const toggleButton = document.getElementById("toggle-view");
-    let isGridView = true;
+    const toggleButton = document.getElementById("menu-list");
+    let isGridView = true;   
+
 
     async function fetchMembers() {
         try {
-            const response = await fetch("./data/members.json");
+            const response = await fetch("chamber/data/members.json");
             if (!response.ok) throw new Error("Failed to fetch members");
             const members = await response.json();
             displayMembers(members);
