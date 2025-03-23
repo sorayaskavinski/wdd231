@@ -3,7 +3,7 @@
     --secondary-color: darkblue;
     --backround-color:  #C5DDF6;
     --text-color: white;
-    --text-second-color: black;
+    --second-color: black;
 }
 
 * {
@@ -37,7 +37,7 @@ main {
 }
 
 h1 {      
-    color: var(--text-second-color);
+    color: var(--second-color);
     text-align: center;
     padding: 10px;
     font-weight: bold;     
@@ -227,7 +227,7 @@ footer {
     gap: 20px; 
     padding: 20px;
     background-color:var(--primary-color);
-    color: var(--text-second-color);
+    color: var(--second-color);
     text-align: center;
 }
 
