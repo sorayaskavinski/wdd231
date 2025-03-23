@@ -37,7 +37,7 @@ main {
 }
 
 h1 {      
-    color: var(--text-color);
+    color: var(--text-second-color);
     text-align: center;
     padding: 10px;
     font-weight: bold;     
@@ -223,11 +223,11 @@ h3{
 
 footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px; 
     padding: 20px;
     background-color:var(--primary-color);
-    color: var(--text-color);
+    color: var(--text-second-color);
     text-align: center;
 }
 
