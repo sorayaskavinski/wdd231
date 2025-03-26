@@ -155,9 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayFeaturedMembers(members) {
-        featuredContainer.innerHTML = "";        
-        
-        // Create a shuffled copy to avoid modifying the original members array
+        featuredContainer.innerHTML = "";    
+
         const shuffled = [...members].sort(() => 0.5 - Math.random()).slice(0, 3);
 
         shuffled.forEach(member => {
@@ -191,7 +190,7 @@ if (form) {
             data.append(key, value);
         });
 
-        const url = 'thanks.html?' + data.toString();
+        const url = 'thankyou.html?' + data.toString();
         window.location.href = url;
     });
 }
