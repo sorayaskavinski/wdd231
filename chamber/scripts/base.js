@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("current-temp").innerHTML = `<strong>Temperature:</strong> ${data.main.temp}°C`;
           document.getElementById("description").innerHTML = `<strong>Condition: </strong> ${data.weather[0].description}`;
           document.getElementById("high-temp").innerHTML = `<strong>High: </strong> ${data.main.temp_max}°C`;
-          document.getElementById("low-temp").innerHTML = `<strong>Low:</stong> ${data.main.temp_min}°C`;
+          document.getElementById("low-temp").innerHTML = `<strong>Low: </strong> ${data.main.temp_min}°C`;
           document.getElementById("humidity").innerHTML = `<strong>Humidity: </strong> ${data.main.humidity}%`;  
         
           const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    
+
     function displayMembers(members) {
         membersContainer.innerHTML = "";
         membersContainer.className = isGridView ? "grid-view" : "list-view";
@@ -176,3 +178,73 @@ document.addEventListener("DOMContentLoaded", function () {
     
     fetchMembers();
 });
+
+        
+const form = document.querySelector('.formDesign');
+if (form) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const data = new URLSearchParams();
+
+        formData.forEach((value, key) => {
+            data.append(key, value);
+        });
+
+        const url = 'thanks.html?' + data.toString();
+        window.location.href = url;
+    });
+}
+
+function showMembershipDetails(level) {
+        const membershipDetails = {
+            "non-profit": {
+                title: "Non-Profit Membership",
+                description: "This level offers benefits for non-profit organizations, with a 5% discount."
+            },
+            "bronze": {
+                title: "Bronze Membership",
+                description: "The Bronze Membership offers entry-level with a 5% discount."
+            },
+            "silver": {
+                title: "Silver Membership",
+                description: "The Silver Membership provides top of the list once a month."
+            },
+            "gold": {
+                title: "Gold Membership",
+                description: "The Gold Membership offers guarantee top of the list weekly and homepage appearance."
+            }
+        };
+    
+        const membershipBox = document.getElementById("membership-box");
+        const membershipContent = document.getElementById("membership-content");
+    
+        if (membershipDetails[level]) {
+            membershipContent.innerHTML = `
+                <h3>${membershipDetails[level].title}</h3>
+                <p>${membershipDetails[level].description}</p>
+            `;
+            membershipBox.showModal(); 
+        }
+    }
+    
+    
+   
+document.getElementById("closeScreen").addEventListener("click", function() {
+        document.getElementById("membership-box").close();
+    });
+    
+
+document.getElementById("openButton1").addEventListener("click", function() {
+    showMembershipDetails("non-profit");
+});
+document.getElementById("openButton2").addEventListener("click", function() {
+    showMembershipDetails("bronze");
+});
+document.getElementById("openButton3").addEventListener("click", function() {
+    showMembershipDetails("silver");
+});
+document.getElementById("openButton4").addEventListener("click", function() {
+    showMembershipDetails("gold");
+});
+

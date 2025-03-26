@@ -343,10 +343,125 @@ footer {
     color: var(--text-second-color);
 }
 
+main {
+    align-items: center;
+    padding: 10px;
+}
+
+#join {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    width: 100%;
+}
+
+form {
+    display: grid;
+    border: double 10px white;
+    padding: 5px;
+    margin: 5px;
+    grid-gap: 10px;
+}
+
+#membership-level {
+    max-width: 100%;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+}
+
+.member-card {
+    width: 100%;
+    max-width: 600px;
+    animation: blue-background-color 3s ease-in-out forwards;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+    justify-items: center;
+}
+
+@keyframes blue-background-color {
+    0% {
+        background-color: rgb(0, 58, 124);
+    }
+    50% {
+        background-color: rgb(33, 96, 168);
+    }
+    100% {
+        background-color: #6BA8E8;
+    }
+}
+
+.member-card h3 {
+    margin: 0 auto;
+    background-color: transparent;
+    animation: black-color 3s ease-in-out forwards;
+}
+
+@keyframes black-color {
+    0% {
+        color: rgb(255, 255, 255);
+    }
+    60% {
+        color: rgb(133, 133, 133);
+    }
+    100% {
+        color: rgb(0, 0, 0);
+    }
+}
+
+.member-card button {
+    justify-self: center;
+    padding: 2px;
+}
+
+#membership-box {
+    margin: auto auto;
+    padding: 1rem;
+    background-color: #C5DDF6;
+    border: dashed 1px black;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#membership-box h2 {
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+#membership-box button {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    padding: 4px 2px 2px 2px;
+    justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+    #join {
+        grid-template-columns: 1fr; 
+    }
+
+    .member-card {
+        max-width: 100%; 
+    }
+
+    #membership-level {
+        margin-top: 20px;
+    }
+    
+    form {
+        max-width: 100%; 
+    }
+}
 
 
 
 /*Responsive Styles*/
+
 @media (max-width: 600px) {
     .menu-toggle {
         display: block; 
