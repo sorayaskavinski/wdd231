@@ -199,19 +199,19 @@ function showMembershipDetails(level) {
         const membershipDetails = {
             "non-profit": {
                 title: "Non-Profit Membership",
-                description: "This level offers benefits for non-profit organizations, with a 5% discount."
+                description: "Only Non-Profit Membership - Free"
             },
             "bronze": {
                 title: "Bronze Membership",
-                description: "The Bronze Membership offers entry-level with a 5% discount."
+                description: "Only today. U$40 annually"
             },
             "silver": {
                 title: "Silver Membership",
-                description: "The Silver Membership provides top of the list once a month."
+                description: "Only today - U$60 annually, your name will be on homepage."
             },
             "gold": {
                 title: "Gold Membership",
-                description: "The Gold Membership offers guarantee top of the list weekly and homepage appearance."
+                description: "Only today - U$80 annually, your name will be on top of the page and homepage"
             }
         };
     
