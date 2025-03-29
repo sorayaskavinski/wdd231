@@ -247,3 +247,12 @@ document.getElementById("openButton4").addEventListener("click", function() {
     showMembershipDetails("gold");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const timestampField = document.getElementById("timestamp");
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
+});
+
+
+

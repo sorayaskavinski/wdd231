@@ -34,6 +34,8 @@
         <h1>São Paulo Chamber of Commerce - Become a Member</h1>
         <section id ="join" >
             <form action="thankyou.html" method="GET" class="formDesign">
+                <input type="hidden" id="timestamp" name="timestamp">
+                
                 <label>First Name*<input type="text" required name="first-name" autocomplete="given-name"></label>
                 <label>Last Name*<input type="text" required name="last-name" autocomplete="family-name"></label>
                 <label>Organizational Title<input type="text" name="org-title"
@@ -45,7 +47,7 @@
                         title="Enter a valid mobile phone number" autocomplete="tel"></label>
                 <label>Business/Organization's Name*<input type="text" required name="org-name" title="Enter a short name"
                         autocomplete="organization"></label>
-    
+            
                 <label>Membership Level
                     <select name="membership" required>
                         <option value="" disabled selected>Select One of The Membership Levels</option>
@@ -55,13 +57,12 @@
                         <option value="gold"> Gold Membership</option>
                     </select>
                 </label>
-    
+            
                 <label>Business/Organization's Description<textarea title="Write a short description about the company"
                         name="org-description"></textarea></label>
-    
-                <input type="hidden" name="timestamp" id="timestamp" value="">
+            
                 <input type="submit" value="Finish Application">
-            </form>
+            </form>            
        
             <section id="membership-level">
                 <h2>Membership Levels</h2>
