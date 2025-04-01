@@ -1,51 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>WDD 231 - Turbo Manutenções e Reformas - Website Plan</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="description" content="Create a website plan to create the final project for WDD231">
+        <meta name="author" content="Soraya Skavinski">             
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico"> 
+        
+        <style>
+            body {
+                font-family: Arial, sans-serif;               
+                color: black;
+                padding: 20px;
+            }
+            h1, h2, h3 {
+                color: #6c97e1;
+                font-family: 'Roboto', sans-serif;
+            }
 
+            h1{
+                text-align: center;
+            }
+            .color-box {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border: 1px solid #000;
+                margin-left: 5px;
+            }
+            
+            .primary { background-color: #6c97e1; }
+            .secondary { background-color: #f3ede1; }
+            .button { background-color: #ffffff; border: 1px solid #000; }
+            .text { background-color: #000000; color: white; }
+            .last-modified {
+                margin-top: 20px;
+                font-size: 14px;
+                color: #333;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1><strong> Turbo Manutenções e Reformas - Site Plan </strong></h1>
+            <h2>Site Name: </h2>
+            <p><strong>Turbo Manutenções e Reformas </strong></p>
+            <h2>Reason for Name: </h2>
+            <p>It's the name of my husband's company, which represents how fast he does things.</p>
+            
+            <h2>Scenarios:</h2>
+            <p><strong>What types of services are available?</strong> </p>
+            <p><strong>How can people reach out the company?</strong></p>
+            <p>Facts about the company, how many people has he attended until today</p>
+            <p>Visitors will want to know about the services offered, such as plumbing, electrical work, and home renovations.</p>
+            <p>This is important for potential clients looking for ways to get in touch for quotes or inquiries.</p>
 
-<h1><strong> Turbo Manutenções e Reformas - Site Plan </strong></h1>
-<h2>Site Name: </h2>
-
-<h3><strong>Turbo Manutenções e Reformas </strong></h3>
-<p>Reason for Name: It's the name of my husband's company, which represents how fast he does things.</p>
-
-<h2>Site Purpose: </h2>
-
-<p>The website will showcase the various handyman services provided by "Turbo Manutenções e Reformas," such as electrical repairs, plumbing, furniture assembly, and painting. It will offer contact information, service descriptions, and a way for potential clients to request a quote or service.</p>
-
-<h2>Scenarios:</h2>
-
-<h3>What types of services are available?</h3>
-<h3>How can people reach out the company?</h3>
-<p>Facts about the company, how many people has he attended until today</p>
-
-<p>Visitors will want to know about the services offered, such as plumbing, electrical work, and home renovations.</p>
-
-<p>Contact Information </p>
-
-<p>This is important for potential clients looking for ways to get in touch for quotes or inquiries.</p>
-
-<h2>Color Schema:</h2>
-
-<p>Primary Color: #6c97e1 – Used for headings, and bottom and accents to convey trust and reliability.</p>
-<p>Secondary Color: #f3ede1 - Used for backgrounds</p>
-<p>Button Color: White (#FFFFFF) –Button/text color when used on primary color to create clarity and readability.</p>
-<p>Text Color: black (#00000) - Used for text inside secondary color or buttons to create readability</p>
-
-
-<h2>Typography:</h2>
-
-<p>Heading Font: "Roboto", sans-serif – Used for headings to give a modern and clean feel.</p>
-
-<p>Body Font: "Arial", sans-serif – Used for paragraphs and general text to ensure readability.</p>
-
-<h2>Wireframe:</h2>
-
-<img src="images/small.png" alt="Desktop Wireframe" width="500">
-<p><strong>Mobile View:</strong> Simple layout with a header, followed by a section introducing the services, then a contact information at the bottom.</p>
-<img src="images/Header.png" alt="Desktop Wireframe" width="500">
-<p><strong>Desktop View: </strong> More spread-out layout, with a navigation bar at the top, followed by sections for each service (e.g., electrical, plumbing), and a contact information at the bottom.</p>
-<h2>CSS:</h2>
-
-Basic CSS will be used to apply the color scheme and typography to the page. You will also create a simple layout with a responsive design using media queries.
-
-<h2>Testing:</h2>
-
-Use tools to validate HTML and CSS, check accessibility, and ensure good performance.
+            <h2>Color Schema:</h2>
+            <p>Primary Color: #6c97e1 - Used for headings, and bottom and accents to convey trust and reliability - <span class="color-box primary"></span></p>
+            <p>Secondary Color: #f3ede1 - Used for backgrounds - <span class="color-box secondary"></span></p>
+            <p>Button Color: White (#FFFFFF) –Button/text color when used on primary color to create clarity and readability - <span class="color-box button"></span></p>
+            <p>Text Color: Black (#000000) - Used for text inside secondary color or buttons to create readability - <span class="color-box text"></span></p>
+            
+            <h2>Typography:</h2>
+            <p>Heading Font: "Roboto", sans-serif – Used for headings to give a modern and clean feel.</p>
+            <p>Body Font: "Arial", sans-serif – Used for paragraphs and general text to ensure readability.</p>
+            
+            <h2>Wireframe:</h2>
+            <img src="images/small.png" alt="Desktop Wireframe" width="800">
+            <p><strong>Mobile View:</strong> Simple layout with a header, followed by a section introducing the services, then a contact information at the bottom.</p>
+            <img src="images/Header.png" alt="Desktop Wireframe" width="800">
+            <p><strong>Desktop View: </strong> More spread-out layout, with a navigation bar at the top, followed by sections for each service (e.g., electrical, plumbing), and a contact information at the bottom.</p>
+            
+            <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+        </main>
+        
+        <script>
+            document.getElementById("lastModified").textContent = document.lastModified;
+        </script>
+    </body>
+</html>
