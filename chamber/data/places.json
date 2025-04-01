@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Avenida Paulista",
+    "address": "Avenida Paulista, São Paulo - Brazil",       
+    "image": "paulista.webp",      
+    "description": "Paulista Avenue is one of the most famous tourist attractions of São Paulo. This avenue is a shopping paradise, with a diversity of commercial shops and stores. It also has a range of restaurants for gastronomy lovers, and on Sundays, it's a family zone where cars are prohibited.",
+    "website": "https://www.wemobi.me/blog/17-passeios-para-fazer-em-sao-paulo-em-2023"
+  },
+  {
+    "name": "Liberdade",
+    "address": "Praça da Liberdade, São Paulo - Brazil", 
+    "image": "liberdade.webp",      
+    "description": "Liberdade neighborhood is a traditional Asian place in the city, where tourists can sightsee, visit the Busshinji Temple, eat oriental food, and have a cultural experience.",
+    "website": "https://saopaulosecreto.com/bairro-da-liberdade-sp/"
+  },
+  {
+    "name": "Museu Catavento",
+    "address": "Av Mercúrio, s/n - Pq Dom Pedro II, Centro, São Paulo - Brazil", 
+    "image": "museu-catavento.webp",      
+    "description": "Catavento Museum is great entertainment for children and adults. It contains a variety of science and technology collections that are worth visiting. Free entrance every Tuesday.",
+    "website": "https://www.museucatavento.org.br/"
+  },
+  {
+    "name": "Museu do Ipiranga",
+    "address": "Rua dos Patriotas, 100, Ipiranga, São Paulo - Brazil", 
+    "image": "museu-do-ipiranga.webp",      
+    "description": "Ipiranga Museum contains the largest collection of Brazilian independence items, from clothing to weapons. Its outside garden is free and a perfect place to rest and take pictures, with lots of monuments.",
+    "website": "https://museudoipiranga.org.br/"
+  },
+  {
+    "name": "Parque do Ibirapuera",
+    "address": "Av. Pedro Álvares Cabral, s/n - Vila Mariana - SP", 
+    "image": "parque-ibirapuera.webp",      
+    "description": "Ibirapuera Park has 158 hectares and is one of the biggest tourist attractions in Latin America. Visitors can practice sports, dance, have picnics, see animals, appreciate nature, and much more.",
+    "website": "https://www.parquedoibirapuera.org/"
+  },
+  {
+    "name": "Santander Tower",
+    "address": "R. João Brícola, 24 - Centro Histórico de São Paulo, São Paulo - Brazil", 
+    "image": "santander.webp",      
+    "description": "With 35 floors, this historic building preserves its history. It's not only a place to sightsee and have a marvelous breakfast, but it also offers a skating rink on the 21st floor, cooking classes on the 28th floor, and much more.",
+    "website": "https://www.farolsantander.com.br/"
+  },
+  {
+    "name": "Municipal Theater",
+    "address": "Praça Ramos de Azevedo, s/nº Sé, São Paulo - Brazil", 
+    "image": "teatro-municipal.webp",      
+    "description": "With over 113 years of history, this magnificent building has hosted great orchestras and plays and remains a great place to visit and listen to classical music. Free tours can be scheduled on the website.",
+    "website": "https://www.theatromunicipal.org.br/theatro-municipal-2/"
+  },
+  {
+    "name": "Terraço Itália",
+    "address": "Av. Ipiranga, 344, 41º andar, Centro, São Paulo - Brazil", 
+    "image": "terraco-italia.webp",      
+    "description": "Terraço Itália is one of the most popular haute cuisine restaurants in São Paulo, located on the 41st floor with a breathtaking view. It offers a premium experience worth the price.",
+    "website": "https://www.terracoitalia.com.br/"
+  }
+]

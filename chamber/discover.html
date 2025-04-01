@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>São Paulo Chamber of Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover page for chamber page where it promotes places in the area of Sao Paulo">
+    <meta name="author" content="Soraya Skavinski">  
+    <meta property="og:title" content="Chamber Site - Discover Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sorayaskavinski.github.io/wdd231/images/mapa.webp">
+    <meta property="og:url" content="https://sorayaskavinski.github.io/wdd231/chamber/discover.html">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">    
+    <script src="scripts/base.js" defer></script>     
+    <link rel="icon" href="favicon.ico">  
+</head>
+<body>
+    <header> 
+                          
+        <img src="images/emblema.webp" alt="Chamber emblem">        
+        <button class="menu-toggle">☰</button>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html" title="Home" target="_blank">Home</a></li>
+                <li><a href="directory.html" title="Directory" target="_blank">Directory</a></li>
+                <li><a href="join.html" title="Join" target="_blank">Join</a></li>
+                <li><a href="discover.html" target="_blank" title="Discover">Discover</a></li>
+            </ul>
+        </nav>          
+    </header>
+    <main>
+        <h1>São Paulo Chamber of Commerce</h1>
+        <p id="message"></p>
+        <div id="place-cards" class="pgrid"></div>   
+    </main>   
+    <footer>
+        <div id="first-footer-info">
+            <p>São Paulo Chamber of Commerce</p>
+            <p>Rua 25 de Março, 210, Downtown</p>
+            <p>São Paulo, São Paulo, Brazil</p>
+            <p>info@sp.gov.br</p>
+            <p>+55 (11) 9876-54321</p>
+        </div>
+        <nav id="footer-social">
+            <a href="https://www.youtube.com/" target="_blank">
+                <img src="images/youtube-logo.webp" alt="YouTube logo">
+            </a>
+            <a href="https://x.com/home" target="_blank">
+                <img src="images/x-logo.webp" alt="X (Twitter) logo">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="images/facebook-logo.webp" alt="Facebook logo">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="images/linkedin-logo.webp" alt="LinkedIn logo">
+            </a>
+        </nav>
+        <div id="second-footer-info">
+            <p>WDD231 Class Project</p>
+            <p>Soraya Skavinski</p>
+            <p>&copy; <span id="year"></span> São Paulo Chamber of Commerce</p>
+            <p><span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>

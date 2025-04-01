@@ -254,5 +254,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+//Add places
+document.addEventListener("DOMContentLoaded", async () => {
+    const placeContainer = document.getElementById("place-cards");
+
+    async function fetchPlaces() {
+        try {
+            const response = await fetch("./data/places.json");
+            if (!response.ok) throw new Error("Failed to fetch places");
+            const places = await response.json();
+            displayPlaceContainer(places); 
+        } catch (error) {
+            console.error(error);
+            if (placeContainer) {
+                placeContainer.innerHTML = "<p>Error loading places.</p>";
+            }
+        }
+    }
+
+    function displayPlaceContainer(places) {
+        placeContainer.innerHTML = ""; 
+
+        places.forEach(place => {
+            const placeCard = document.createElement("div");
+            placeCard.classList.add("place-card");
+
+            placeCard.innerHTML = `
+                <img src="images/${place.image}" alt="${place.name}">
+                <h3>${place.name}</h3>
+                <p>${place.description}</p>
+                <p><strong>Address:</strong> ${place.address}</p>                
+                <p><strong>More info:</strong> <a href="${place["more-info"]}" target="_blank">Visit</a></p>
+            `;
+
+            placeContainer.appendChild(placeCard);
+        });
+    }
+
+    fetchPlaces();
+});
 
 
+        
