@@ -382,16 +382,15 @@ form {
 }
 .member-card div {
     flex: 1 1 45%; 
-    background-color: #f5f5f2; 
+    background-color: white; 
     padding: 10px;  
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    border-radius: 5px;   
     align-items: center;
 }
 
 @keyframes blue-background-color {
     0% {
-        background-color: rgb(153, 183, 220);
+        background-color: rgb(181, 220, 153);
     }
     50% {
         background-color: rgb(48, 86, 130);
@@ -409,7 +408,7 @@ form {
 
 .member-card p{
     color: black;
-    animation: black-color 3s ease-in backwards;
+    animation: black-color 2s ease-in backwards;
     font-size: 14px;
     padding-top: 30px;
     font-weight: bold;
@@ -418,10 +417,10 @@ form {
 
 @keyframes black-color {
     0% {
-        color: rgb(255, 255, 255);
+        color: rgb(1, 63, 126);
     }
     60% {
-        color: rgb(208, 207, 207);
+        color: rgb(7, 2, 111);
     }
     100% {
         color: rgb(11, 0, 53);
