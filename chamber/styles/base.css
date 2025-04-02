@@ -376,26 +376,45 @@ form {
     border-radius: 8px;
     padding-bottom: 5px;
     margin-bottom: 1rem;
-    justify-items: center;
+    display: flex;  
+    gap: 5px;
+    
+}
+.member-card div {
+    flex: 1 1 45%; 
+    background-color: #f0f0f0; 
+    padding: 10px;  
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    align-items: center;
 }
 
 @keyframes blue-background-color {
     0% {
-        background-color: rgb(2, 21, 44);
+        background-color: rgb(153, 183, 220);
     }
     50% {
         background-color: rgb(48, 86, 130);
     }
     100% {
-        background-color: rgb(215, 251, 237);
+        background-color: rgb(2, 15, 63);
     }
 }
 
-.member-card h3 {
+.member-card h3{
     margin: 0 auto;
     background-color: transparent;
-    animation: black-color 3s ease-in-out forwards;
+    animation: black-color 2s ease-in-out forwards;
 }
+
+.member-card p{
+    color: black;
+    animation: black-color 3s ease-in-out backwards;
+    font-size: 14px;
+    padding-top: 30px;
+}
+
+
 
 @keyframes black-color {
     0% {
@@ -409,35 +428,8 @@ form {
     }
 }
 
-.member-card button {
-    justify-self: center;
-    padding: 2px;
-    background-color: darkblue;
-    color: white;
-}
-
-#membership-box {
-    margin: auto auto;
-    padding: 1rem;
-    background-color: #76d295;
-    border: dashed 1px black;
-}
-
 ::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-#membership-box h2 {
-    padding-bottom: 0.5rem;
-    text-align: center;
-}
-
-#membership-box button {
-    position: absolute;
-    top: 20px;
-    right: 5px;
-    padding: 4px 2px 2px 2px;
-    justify-content: center;
 }
 
 .pgrid {

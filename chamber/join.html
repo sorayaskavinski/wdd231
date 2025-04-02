@@ -13,8 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/base.css">    
-    <script src="scripts/base.js" defer></script>     
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="icon" href="favicon.ico">  
 </head>
 <body>
@@ -50,7 +49,7 @@
             
                 <label>Membership Level
                     <select name="membership" required>
-                        <option value="" disabled selected>Select One of The Membership Levels</option>
+                        <option value=" " disabled selected>Select One of The Membership Levels</option>
                         <option value="non-profit"> NP Membership</option>
                         <option value="bronze"> Bronze Membership</option>
                         <option value="silver"> Silver Membership</option>
@@ -65,27 +64,25 @@
             </form>            
        
             <section id="membership-level">
-                <h2>Membership Levels</h2>
-                <div class="member-card">
-                    <h3>Non Profit Membership Level</h3>
-                    <button id="openButton1">More Details</button>
-                </div>
-                <div class="member-card">
-                    <h3>Bronze Membership Level</h3>
-                    <button id="openButton2">More Details</button>
-                </div>
-                <div class="member-card">
-                    <h3>Silver Membership Level</h3>
-                    <button id="openButton3">More Details</button>
-                </div>
-                <div class="member-card">
-                    <h3>Gold Membership Level</h3>
-                    <button id="openButton4">More Details</button>
-                </div>
-                <dialog id="membership-box">
-                    <div id="membership-content"></div>
-                    <button id="closeScreen" aria-label="Close membership details">❌</button>
-                </dialog>                
+                <h2>Membership Levels</h2>               
+                   <div class="member-card">
+                        <div>
+                            <h3>Non Profit Membership Level</h3>
+                            <p>Only Non-Profit Membership - Free</p>
+                        </div>
+                        <div>
+                            <h3>Bronze Membership Level</h3>
+                            <p>Only U$40 annually</p>
+                        </div>
+                        <div>
+                            <h3>Silver Membership Level</h3>
+                            <p>U$60 annually, your name will be on homepage.</p>
+                        </div>
+                        <div>
+                            <h3>Gold Membership Level</h3>
+                            <p>U$80 annually, your name will be on top of the page and homepage</p>
+                        </div>
+                    </div>                    
             </section>
         </section>       
     </main>
@@ -118,5 +115,6 @@
             <p><span id="lastModified"></span></p>
         </div>
     </footer>
+    <script src="scripts/base.js" defer></script>   
 </body>
 </html>

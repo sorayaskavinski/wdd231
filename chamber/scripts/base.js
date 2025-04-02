@@ -13,67 +13,70 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
   });  
 
-  const apiKey = "815123c426417cedb6f39238699089a1";
-  const city = "São Paulo";
-  
-  // API URLs
-  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
-  
-  async function getWeather() {
-      try {
-          const response = await fetch(currentWeatherUrl);
-          if (!response.ok) throw new Error("Weather data not available");
-  
-          const data = await response.json();  
-          
-          document.getElementById("current-temp").innerHTML = `<strong>Temperature:</strong> ${data.main.temp}°C`;
-          document.getElementById("description").innerHTML = `<strong>Condition: </strong> ${data.weather[0].description}`;
-          document.getElementById("high-temp").innerHTML = `<strong>High: </strong> ${data.main.temp_max}°C`;
-          document.getElementById("low-temp").innerHTML = `<strong>Low: </strong> ${data.main.temp_min}°C`;
-          document.getElementById("humidity").innerHTML = `<strong>Humidity: </strong> ${data.main.humidity}%`;  
-        
-          const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-          document.getElementById("weather-icon").src = iconUrl;
-          document.getElementById("weather-icon").alt = data.weather[0].description;  
-          
-          const sunriseTime = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
-          const sunsetTime = new Date(data.sys.sunset * 1000).toLocaleTimeString();
-  
-          document.getElementById("sunrise").innerHTML = `<strong>Sunrise:</strong> ${sunriseTime}`;
-          document.getElementById("sunset").innerHTML = `<strong>Sunset:</strong> ${sunsetTime}`;
-      } catch (error) {
-          console.error(error);
-      }
-  }
-  
-  async function getWeatherForecast() {
-      try {
-          const response = await fetch(forecastUrl);
-          if (!response.ok) throw new Error("Forecast data not available");
-  
-          const data = await response.json();
-  
-         
-          const dailyForecasts = data.list.filter(entry => entry.dt_txt.includes("12:00:00"));
-  
-          // Forecast days 
-          if (dailyForecasts.length >= 3) {
-              document.getElementById("today").innerHTML = `<strong>Today: </strong> ${dailyForecasts[0].main.temp}°C - ${dailyForecasts[0].weather[0].description}`;
-              document.getElementById("next-day").innerHTML = `<strong>Tomorrow:</strong> ${dailyForecasts[1].main.temp}°C - ${dailyForecasts[1].weather[0].description}`;
-              document.getElementById("next-day2").innerHTML = `<strong>Day After Tomorrow: </strong> ${dailyForecasts[2].main.temp}°C - ${dailyForecasts[2].weather[0].description}`;
-          } else {
-              console.warn("Not enough forecast data available.");
-          }
-      } catch (error) {
-          console.error(error);
-      }
-  }  
- 
-  window.addEventListener("load", () => {
-      getWeather();
-      getWeatherForecast();
-  });
+   
+  document.addEventListener("DOMContentLoaded", function () {
+    const apiKey = "8ceae106ba548b07994d14e48de39595";
+    const city = "São Paulo"; 
+
+    // URLs to get weather and forecast
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+    // Weather now function
+    async function getWeather() {
+        try {
+            const response = await fetch(weatherUrl); 
+            if (!response.ok) throw new Error("Weather data not available");
+
+            const data = await response.json();
+            document.getElementById("current-temp").innerHTML = `<strong>Temperature:</strong> ${data.main.temp}°C`;
+            document.getElementById("description").innerHTML = `<strong>Condition:</strong> ${data.weather[0].description}`;
+            document.getElementById("high-temp").innerHTML = `<strong>High:</strong> ${data.main.temp_max}°C`;
+            document.getElementById("low-temp").innerHTML = `<strong>Low:</strong> ${data.main.temp_min}°C`;
+            document.getElementById("humidity").innerHTML = `<strong>Humidity:</strong> ${data.main.humidity}%`;  
+
+            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+            document.getElementById("weather-icon").src = iconUrl;
+            document.getElementById("weather-icon").alt = data.weather[0].description;  
+
+            const sunriseTime = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+            const sunsetTime = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+
+            document.getElementById("sunrise").innerHTML = `<strong>Sunrise:</strong> ${sunriseTime}`;
+            document.getElementById("sunset").innerHTML = `<strong>Sunset:</strong> ${sunsetTime}`;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // Forecast Function
+    async function getWeatherForecast() {
+        try {
+            const response = await fetch(forecastUrl);
+            if (!response.ok) throw new Error("Forecast data not available");
+
+            const data = await response.json();
+            const dailyForecasts = data.list.filter(entry => entry.dt_txt.includes("12:00:00"));
+
+           
+            if (dailyForecasts.length >= 3) {
+                document.getElementById("today").innerHTML = `<strong>Today:</strong> ${dailyForecasts[0].main.temp}°C - ${dailyForecasts[0].weather[0].description}`;
+                document.getElementById("next-day").innerHTML = `<strong>Tomorrow:</strong> ${dailyForecasts[1].main.temp}°C - ${dailyForecasts[1].weather[0].description}`;
+                document.getElementById("next-day2").innerHTML = `<strong>Day After Tomorrow:</strong> ${dailyForecasts[2].main.temp}°C - ${dailyForecasts[2].weather[0].description}`;
+            } else {
+                console.warn("Not enough forecast data available.");
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    
+    window.addEventListener("load", () => {
+        getWeather();
+        getWeatherForecast();
+    });
+});
+
  
 
   document.addEventListener("DOMContentLoaded", async () => {
@@ -195,64 +198,13 @@ if (form) {
     });
 }
 
-function showMembershipDetails(level) {
-        const membershipDetails = {
-            "non-profit": {
-                title: "Non-Profit Membership",
-                description: "Only Non-Profit Membership - Free"
-            },
-            "bronze": {
-                title: "Bronze Membership",
-                description: "Only today. U$40 annually"
-            },
-            "silver": {
-                title: "Silver Membership",
-                description: "Only today - U$60 annually, your name will be on homepage."
-            },
-            "gold": {
-                title: "Gold Membership",
-                description: "Only today - U$80 annually, your name will be on top of the page and homepage"
-            }
-        };
-    
-        const membershipBox = document.getElementById("membership-box");
-        const membershipContent = document.getElementById("membership-content");
-    
-        if (membershipDetails[level]) {
-            membershipContent.innerHTML = `
-                <h3>${membershipDetails[level].title}</h3>
-                <p>${membershipDetails[level].description}</p>
-            `;
-            membershipBox.showModal(); 
-        }
-    }
-    
-    
-   
-document.getElementById("closeScreen").addEventListener("click", function() {
-        document.getElementById("membership-box").close();
-    });
-    
-
-document.getElementById("openButton1").addEventListener("click", function() {
-    showMembershipDetails("non-profit");
-});
-document.getElementById("openButton2").addEventListener("click", function() {
-    showMembershipDetails("bronze");
-});
-document.getElementById("openButton3").addEventListener("click", function() {
-    showMembershipDetails("silver");
-});
-document.getElementById("openButton4").addEventListener("click", function() {
-    showMembershipDetails("gold");
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const timestampField = document.getElementById("timestamp");
     if (timestampField) {
         timestampField.value = new Date().toISOString();
     }
 });
+
 
 //Add places
 document.addEventListener("DOMContentLoaded", async () => {
