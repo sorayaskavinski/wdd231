@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             placeCard.classList.add("placecards");
 
             placeCard.innerHTML = `
-                <img src="images/${place.image}" alt="${place.name}">
+                <img src="images/${place.image}" alt="${place.name}" loading="lazy">
                 <h3>${place.name}</h3>
                 <p>${place.description}</p>
                 <p><strong>Address:</strong> ${place.address}</p>                
@@ -246,5 +246,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     fetchPlaces();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const lastVisit = localStorage.getItem("lastVisit");
+
+    const message = document.getElementById("message");
+    const currentDate = new Date().toLocaleDateString();
+
+    if (lastVisit) {
+        message.innerHTML = `Welcome back! Your last visit was on ${lastVisit}.`;
+    } else {
+        message.innerHTML = "Welcome to our website! We're glad you're here.";
+    }
+    
+    localStorage.setItem("lastVisit", currentDate);
+});
 
         
