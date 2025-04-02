@@ -432,34 +432,38 @@ form {
 }
 
 .pgrid {
-    display: flex;
-    flex-direction: column; 
+    display: grid;
+    grid-template-columns: repeat(auto-fill,  minmax(400px,1fr));
     align-items: center; 
-    gap: 20px; 
+    gap: 20px;
+    padding: 20px;
 }
 
-.place-card {
+.placecards {
     width: 90%; 
     max-width: 400px;
     background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 2);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    margin: 0 auto;
+   
 }
 
-.place-card:hover {
+.placecards:hover {
     transform: translateY(-5px); 
 }
 
-.place-card img {
+.placecards img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 10px;
+    width:  300px;
 }
 
-
+/*Responsive Styles*/
 
 @media (max-width: 768px) {
     #join {
@@ -478,10 +482,6 @@ form {
         max-width: 100%; 
     }
 }
-
-
-
-/*Responsive Styles*/
 
 @media (max-width: 600px) {
     .menu-toggle {
@@ -557,4 +557,20 @@ form {
         text-align: center;
     }
 
+    .placecards {
+        max-width: 90%; 
+        padding: 10px; 
+    }
+
+    .pgrid {
+        grid-template-columns: 1fr; 
+    }
+
+}
+
+@media (max-width: 1024px) {
+    
+    .placecards {
+        max-width: 350px; 
+    }
 }

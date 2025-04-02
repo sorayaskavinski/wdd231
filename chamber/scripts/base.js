@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Add places
 document.addEventListener("DOMContentLoaded", async () => {
-    const placeContainer = document.getElementById("place-cards");
+    const placeContainer = document.getElementById("placecards");
 
     async function fetchPlaces() {
         try {
@@ -229,14 +229,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         places.forEach(place => {
             const placeCard = document.createElement("div");
-            placeCard.classList.add("place-card");
+            placeCard.classList.add("placecards");
 
             placeCard.innerHTML = `
                 <img src="images/${place.image}" alt="${place.name}">
                 <h3>${place.name}</h3>
                 <p>${place.description}</p>
                 <p><strong>Address:</strong> ${place.address}</p>                
-                <p><strong>More info:</strong> <a href="${place["more-info"]}" target="_blank">Visit</a></p>
+                <p><strong>More info:</strong> <a href="${place.website}" target="_blank">Visit</a></p>
             `;
 
             placeContainer.appendChild(placeCard);
